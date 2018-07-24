@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+
 @end
 
 @implementation ViewController
@@ -48,6 +50,20 @@
     }] foldLeftWithStart:@"" reduce:^id _Nullable(id  _Nullable accumulator, id  _Nullable value) {
         return [accumulator stringByAppendingString:value];
     }]);
+    
+    // Signal
+    // This particular signal doesn’t typically send error values and only sends a completion value when it’s deallocated
+    [self.textField.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
+        NSLog(@"New value: %@", x);
+    }];
+    
+//    [[self.textField rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+//        NSLog(@"New value: %@", x);
+//    } error:^(NSError * _Nullable error) {
+//        NSLog(@"Error: %@", error);
+//    } completed:^{
+//        NSLog(@"Completed.");
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
