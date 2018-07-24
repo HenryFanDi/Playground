@@ -12,6 +12,7 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UIButton *createAccountButton;
 
 @end
 
@@ -64,6 +65,26 @@
 //    } completed:^{
 //        NSLog(@"Completed.");
 //    }];
+    
+    // Deriving State
+    // "Bind" our button’s enabled property to a signal that we’ll create.
+//    RAC(self.createAccountButton, enabled) = [self.textField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
+//        return @([value rangeOfString:@"@"].location != NSNotFound);
+//    }];
+    
+    RACSignal *validEmailSignal = [self.textField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
+        return @([value rangeOfString:@"@"].location != NSNotFound);
+    }];
+    
+    RAC(self.createAccountButton, enabled) = validEmailSignal;
+    RAC(self.textField, textColor) = [validEmailSignal map:^id _Nullable(id  _Nullable value) {
+        if ([value boolValue]) {
+            return [UIColor greenColor];
+        } else {
+            return [UIColor redColor];
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
