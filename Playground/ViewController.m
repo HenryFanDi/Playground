@@ -76,13 +76,23 @@
         return @([value rangeOfString:@"@"].location != NSNotFound);
     }];
     
-    RAC(self.createAccountButton, enabled) = validEmailSignal;
-    RAC(self.textField, textColor) = [validEmailSignal map:^id _Nullable(id  _Nullable value) {
-        if ([value boolValue]) {
-            return [UIColor greenColor];
-        } else {
-            return [UIColor redColor];
-        }
+//    RAC(self.createAccountButton, enabled) = validEmailSignal;
+//    RAC(self.textField, textColor) = [validEmailSignal map:^id _Nullable(id  _Nullable value) {
+//        if ([value boolValue]) {
+//            return [UIColor greenColor];
+//        } else {
+//            return [UIColor redColor];
+//        }
+//    }];
+    
+    // The signal block is executed whenever the button is pressed, and the "rac_command" property takes care of binding the enabled signal to the enabled state of the button.
+    // We need to return a signal that will be sent down the executionSignals pipe belonging to the RACCommand
+    // This lets you return a signal representing some work that will need to be done as the result of the button press.
+    // The button will remain disabled until that signal returns its complete value (empty returns this value immediately).
+    // Because we’re simply logging the result of the button press, we’re returning an empty signal in this case.
+    self.createAccountButton.rac_command = [[RACCommand alloc] initWithEnabled:validEmailSignal signalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        NSLog(@"Button was pressed");
+        return [RACSignal empty];
     }];
     
 }
