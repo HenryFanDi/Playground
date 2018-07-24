@@ -19,6 +19,7 @@
 		C82712652107238500D7E009 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C82712642107238500D7E009 /* main.m */; };
 		C827126F2107238500D7E009 /* PlaygroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C827126E2107238500D7E009 /* PlaygroundTests.m */; };
 		C827127A2107238500D7E009 /* PlaygroundUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C82712792107238500D7E009 /* PlaygroundUITests.m */; };
+		C899060C21072DED0060016B /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C899060B21072DED0060016B /* Playground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		C82712752107238500D7E009 /* PlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C82712792107238500D7E009 /* PlaygroundUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaygroundUITests.m; sourceTree = "<group>"; };
 		C827127B2107238500D7E009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C899060A21072DED0060016B /* Playground-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Playground-Bridging-Header.h"; sourceTree = "<group>"; };
+		C899060B21072DED0060016B /* Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playground.swift; sourceTree = "<group>"; };
 		D058EA9580F0B91FAF931AB5 /* Pods-PlaygroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaygroundTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlaygroundTests/Pods-PlaygroundTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D6CB6BE05EA151F960DAC062 /* Pods-Playground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playground.release.xcconfig"; path = "Pods/Target Support Files/Pods-Playground/Pods-Playground.release.xcconfig"; sourceTree = "<group>"; };
 		ED96177F7F0C4F801E798AA9 /* Pods-PlaygroundTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaygroundTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlaygroundTests/Pods-PlaygroundTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				C82712632107238500D7E009 /* Info.plist */,
 				C82712642107238500D7E009 /* main.m */,
 				C827125B2107238500D7E009 /* Playground.xcdatamodeld */,
+				C899060B21072DED0060016B /* Playground.swift */,
+				C899060A21072DED0060016B /* Playground-Bridging-Header.h */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 				TargetAttributes = {
 					C827124E2107238500D7E009 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					C82712692107238500D7E009 = {
@@ -369,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C82712572107238500D7E009 /* ViewController.m in Sources */,
+				C899060C21072DED0060016B /* Playground.swift in Sources */,
 				C82712542107238500D7E009 /* AppDelegate.m in Sources */,
 				C82712652107238500D7E009 /* main.m in Sources */,
 				C827125D2107238500D7E009 /* Playground.xcdatamodeld in Sources */,
@@ -535,11 +542,15 @@
 			baseConfigurationReference = FD53652BF0183035CB1D5DE9 /* Pods-Playground.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Playground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HenryFanDi.Playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Playground/Playground-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -549,11 +560,14 @@
 			baseConfigurationReference = D6CB6BE05EA151F960DAC062 /* Pods-Playground.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Playground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HenryFanDi.Playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Playground/Playground-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -562,6 +576,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D058EA9580F0B91FAF931AB5 /* Pods-PlaygroundTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PlaygroundTests/Info.plist;
@@ -577,6 +592,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED96177F7F0C4F801E798AA9 /* Pods-PlaygroundTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PlaygroundTests/Info.plist;
@@ -592,6 +608,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3BC3F02AFF59AF394E447AC2 /* Pods-PlaygroundUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PlaygroundUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -606,6 +623,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A34488B8E20518DBB64BB846 /* Pods-PlaygroundUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PlaygroundUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -1,16 +1,16 @@
 PODS:
-  - RXCollections (1.0)
+  - ReactiveObjC (3.1.0)
 
 DEPENDENCIES:
-  - RXCollections (= 1.0)
+  - ReactiveObjC (= 3.1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - RXCollections
+    - ReactiveObjC
 
 SPEC CHECKSUMS:
-  RXCollections: ef46a1c3b1f25711117ece94c48d9beae9f143a6
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
 
-PODFILE CHECKSUM: 72adf1f2feec2d9fa3d32cea259c7247be36ff19
+PODFILE CHECKSUM: 3abfe13604d3db64af2e81cc987b3073aef59bc1
 
 COCOAPODS: 1.5.3

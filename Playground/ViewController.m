@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <RXCollections/RXCollection.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 
 @interface ViewController ()
 
@@ -26,28 +26,29 @@
 
     NSArray *array = @[@(1), @(2), @(3)];
 
+    RACSequence *stream = [array rac_sequence];
+
     // Map
-    NSArray *mappedArray = [array rx_mapWithBlock:^id(id each) {
-        return @(pow([each integerValue], 2));
-    }];
+    NSLog(@"%@", [stream map:^id _Nullable(id  _Nullable value) {
+        return @(pow([value integerValue], 2));
+    }]);
+
+    NSLog(@"%@", [[[array rac_sequence] map:^id _Nullable(id  _Nullable value) {
+        return @(pow([value integerValue], 2));
+    }] array]);
 
     // Filter
-    NSArray *filteredArray = [array rx_filterWithBlock:^BOOL(id each) {
-        return ([each integerValue] % 2 == 0);
-    }];
+    NSLog(@"%@", [[[array rac_sequence] filter:^BOOL(id  _Nullable value) {
+        return [value integerValue] % 2 == 0;
+    }] array]);
 
     // Fold
-    NSNumber *sum = [array rx_foldWithBlock:^id(id memo, id each) {
-        return @([memo integerValue] + [each integerValue]);
-    }];
-
-    [[array rx_mapWithBlock:^id(id each) {
-        return [each stringValue];
-    }] rx_foldInitialValue:@"" block:^id(id memo, id each) {
-        return [memo stringByAppendingString:each];
-    }];
+    NSLog(@"%@", [[[array rac_sequence] map:^id _Nullable(id  _Nullable value) {
+        return [value stringValue];
+    }] foldLeftWithStart:@"" reduce:^id _Nullable(id  _Nullable accumulator, id  _Nullable value) {
+        return [accumulator stringByAppendingString:value];
+    }]);
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

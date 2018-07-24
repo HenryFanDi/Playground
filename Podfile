@@ -6,7 +6,7 @@ target 'Playground' do
   # use_frameworks!
 
   # Pods for Playground
-  pod 'RXCollections', '1.0'
+  pod 'ReactiveObjC', '3.1.0'
 
   target 'PlaygroundTests' do
     inherit! :search_paths
