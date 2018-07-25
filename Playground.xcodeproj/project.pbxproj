@@ -20,6 +20,7 @@
 		C827126F2107238500D7E009 /* PlaygroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C827126E2107238500D7E009 /* PlaygroundTests.m */; };
 		C827127A2107238500D7E009 /* PlaygroundUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C82712792107238500D7E009 /* PlaygroundUITests.m */; };
 		C899060C21072DED0060016B /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C899060B21072DED0060016B /* Playground.swift */; };
+		D8C9AD5721093EDE00B7198C /* FRPPhotoImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C9AD5621093EDE00B7198C /* FRPPhotoImporter.m */; };
 		D8F0E737210935CF00BF5AFA /* FRPGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F0E736210935CF00BF5AFA /* FRPGalleryViewController.m */; };
 		D8F0E73A210935FF00BF5AFA /* FRPGalleryFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F0E739210935FF00BF5AFA /* FRPGalleryFlowLayout.m */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,9 @@
 		C899060B21072DED0060016B /* Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playground.swift; sourceTree = "<group>"; };
 		D058EA9580F0B91FAF931AB5 /* Pods-PlaygroundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaygroundTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlaygroundTests/Pods-PlaygroundTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D6CB6BE05EA151F960DAC062 /* Pods-Playground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playground.release.xcconfig"; path = "Pods/Target Support Files/Pods-Playground/Pods-Playground.release.xcconfig"; sourceTree = "<group>"; };
+		D8C9AD5521093EDE00B7198C /* FRPPhotoImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRPPhotoImporter.h; sourceTree = "<group>"; };
+		D8C9AD5621093EDE00B7198C /* FRPPhotoImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRPPhotoImporter.m; sourceTree = "<group>"; };
+		D8C9AD5821093F1F00B7198C /* FRP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FRP-Prefix.pch"; sourceTree = "<group>"; };
 		D8F0E735210935CF00BF5AFA /* FRPGalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRPGalleryViewController.h; sourceTree = "<group>"; };
 		D8F0E736210935CF00BF5AFA /* FRPGalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRPGalleryViewController.m; sourceTree = "<group>"; };
 		D8F0E738210935FF00BF5AFA /* FRPGalleryFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRPGalleryFlowLayout.h; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				D8F0E736210935CF00BF5AFA /* FRPGalleryViewController.m */,
 				D8F0E738210935FF00BF5AFA /* FRPGalleryFlowLayout.h */,
 				D8F0E739210935FF00BF5AFA /* FRPGalleryFlowLayout.m */,
+				D8C9AD5521093EDE00B7198C /* FRPPhotoImporter.h */,
+				D8C9AD5621093EDE00B7198C /* FRPPhotoImporter.m */,
 				C82712582107238500D7E009 /* Main.storyboard */,
 				C827125E2107238500D7E009 /* Assets.xcassets */,
 				C82712602107238500D7E009 /* LaunchScreen.storyboard */,
@@ -168,6 +174,7 @@
 				C827125B2107238500D7E009 /* Playground.xcdatamodeld */,
 				C899060B21072DED0060016B /* Playground.swift */,
 				C899060A21072DED0060016B /* Playground-Bridging-Header.h */,
+				D8C9AD5821093F1F00B7198C /* FRP-Prefix.pch */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -484,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C82712572107238500D7E009 /* ViewController.m in Sources */,
+				D8C9AD5721093EDE00B7198C /* FRPPhotoImporter.m in Sources */,
 				C899060C21072DED0060016B /* Playground.swift in Sources */,
 				D8F0E73A210935FF00BF5AFA /* FRPGalleryFlowLayout.m in Sources */,
 				C82712542107238500D7E009 /* AppDelegate.m in Sources */,
@@ -655,6 +663,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Playground/FRP-Prefix.pch";
 				INFOPLIST_FILE = Playground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HenryFanDi.Playground;
@@ -673,6 +683,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Playground/FRP-Prefix.pch";
 				INFOPLIST_FILE = Playground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HenryFanDi.Playground;

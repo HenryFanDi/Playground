@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <ReactiveObjC/ReactiveObjC.h>
 
 @interface ViewController ()
 

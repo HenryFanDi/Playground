@@ -1,0 +1,19 @@
+//
+//  FRP-Prefix.pch
+//  Playground
+//
+//  Created by HenryFan on 26/7/2018.
+//  Copyright © 2018 HenryFanDi. All rights reserved.
+//
+
+#ifndef FRP_Prefix_pch
+#define FRP_Prefix_pch
+
+// Pods
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <libextobjc/EXTScope.h>
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* FRP_Prefix_pch */
