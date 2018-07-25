@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FRPPhotoImporter : NSObject
 
+// Sends the latest results from the API. This RACSignal will be a RACReplaySubject under the hood.
+
++ (RACSignal *)importPhotos;
+
 @end
 
 NS_ASSUME_NONNULL_END

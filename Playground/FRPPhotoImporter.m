@@ -10,5 +10,10 @@
 
 @implementation FRPPhotoImporter
 
++ (RACReplaySubject *)importPhotos {
+    RACReplaySubject *subject = [RACReplaySubject subject];
+    
+    return subject;
+}
 
 @end
