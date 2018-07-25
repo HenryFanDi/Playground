@@ -7,6 +7,8 @@ target 'Playground' do
 
   # Pods for Playground
   pod 'ReactiveObjC', '3.1.0'
+  pod 'libextobjc'
+  pod 'SVProgressHUD'
 
   target 'PlaygroundTests' do
     inherit! :search_paths
